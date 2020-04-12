@@ -1,20 +1,19 @@
 # ICMPack
 
-ICMP Server and Client developed in Python3 for Echo Requests and Responses without dependencies.
+ICMP Server and Client developed in Python3 for Echo Requests and Responses without dependencies (*root required*).
 
 ```
-ICMP Echo / Echo Reply Message header info from RFC792
-    -> http://tools.ietf.org/html/rfc792
+ICMP Echo / Echo Reply Message header info from RFC792 -> http://tools.ietf.org/html/rfc792
 
-    0                   1                   2                   3
-    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-    |     Type      |     Code      |          Checksum             |
-    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-    |           Identifier          |        Sequence Number        |
-    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-    |     Data ...
-    +-+-+-+-+-
+  0                   1                   2                   3
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |     Type      |     Code      |          Checksum             |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |           Identifier          |        Sequence Number        |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |     Data ...
+  +-+-+-+-+-
 ```
 
 ## Considerations
@@ -45,7 +44,15 @@ net.ipv4.icmp_echo_ignore_all=1
 * Pinging google servers
   * Client: `sudo python3.7 client.py google.com`
 
+## known bugs
+
+* Different tests have been made using **localhost** and **lo** interface, but the answers with custom data do not arrive correctly to the client (it is not known why)
+* When viewing outgoing and incoming ICMP packets using Wireshark, it is noted that when different custom data is added to responses and requests, Wireshark flags the wrong packet (as opposed to packets with default data), but does not flag the invalid field or why.
+
 ## References
 
 * https://tools.ietf.org/html/rfc792
 * https://github.com/graywolf/pyicmp/blob/master/ping.py
+
+
+Special thanks to L for his help with some problems
