@@ -52,7 +52,7 @@ net.ipv4.icmp_echo_ignore_all=1
 ## References
 
 * https://tools.ietf.org/html/rfc792
-* https://github.com/graywolf/pyicmp/blob/master/ping.py
+* https://github.com/mjbright/python3-ping/blob/master/ping.py
 
 
 Special thanks to L for his help with some problems
