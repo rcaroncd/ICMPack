@@ -44,10 +44,15 @@ net.ipv4.icmp_echo_ignore_all=1
 * Pinging google servers
   * Client: `sudo python3.7 client.py google.com`
 
-## known bugs
+## Known Bugs
 
 * Different tests have been made using **localhost** and **lo** interface, but the answers with custom data do not arrive correctly to the client (it is not known why)
 * When viewing outgoing and incoming ICMP packets using Wireshark, it is noted that when different custom data is added to responses and requests, Wireshark flags the wrong packet (as opposed to packets with default data), but does not flag the invalid field or why.
+* The icmp client works correctly on Windows systems even without administrator privileges, but the icmp server does not, because the implementation is linked to a network interface, which in Windows I have not yet discovered how it is done.
+
+## Support
+
+Tested on Linux (Linux Mint) and Windows 10.
 
 ## References
 

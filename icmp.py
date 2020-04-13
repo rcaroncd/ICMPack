@@ -78,8 +78,8 @@ class Packet(object):
     *Max data (available) per ICMP packet 65507 bytes:
 
 		65535 bytes (Max IP Packet)
-		-20 bytes (IP Header)
-			-8 bytes (ICMP Header) 
+		  -20 bytes (IP Header)
+		   -8 bytes (ICMP Header) 
 		===== 
 		65507 bytes ~= 65 Kb (1Mb ~= 16 ICMP Packets)
 

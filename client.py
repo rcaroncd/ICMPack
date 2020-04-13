@@ -19,13 +19,8 @@
 #
 from icmp import Packet, Offsets, Sizes
 from sys import argv
-from os import getuid
 import socket
 
-
-if getuid() != 0:
-    print("[!] Root Required")
-    exit(1)
 
 # It is necessary to pass the ip address or hostname of the server
 dest_addr = argv[1]
