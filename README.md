@@ -60,4 +60,4 @@ Tested on Linux (Linux Mint) and Windows 10.
 * https://github.com/mjbright/python3-ping/blob/master/ping.py
 
 
-Special thanks to L for his help with some problems
+Special thanks to L, for his help with some problems
